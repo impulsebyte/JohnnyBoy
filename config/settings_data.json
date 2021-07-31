@@ -5,6 +5,9 @@
     "colors_outline_button_labels": "#1cc198",
     "type_header_font": "roboto_n4",
     "type_body_font": "roboto_n4",
+    "social_twitter_link": "#",
+    "social_facebook_link": "#",
+    "social_instagram_link": "#",
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
@@ -27,10 +30,11 @@
       "header": {
         "type": "header",
         "settings": {
-          "logo_width": 100,
-          "logo_position": "middle-left",
+          "logo": "shopify:\/\/shop_images\/johnnyboy-theme-logo.png",
+          "logo_width": 130,
+          "logo_position": "top-center",
           "menu": "main-menu",
-          "show_line_separator": true,
+          "show_line_separator": false,
           "enable_sticky_header": true
         }
       },
