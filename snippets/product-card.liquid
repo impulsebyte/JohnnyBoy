@@ -107,12 +107,51 @@
         
         {%- render 'cart-notification' -%}
         
-        <form method="post" action="/cart/add" class="add-to-cart">
-              <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" />
-              <button type="submit" name="add" id="AddToCart{{ product.id }}" class="enj-add-to-cart-btn addcart-link pull-left">
-                <span>Add to Cart</span>
-              </button>
-            </form>
+       <div {{ block.shopify_attributes }}>
+              <product-form class="product-form">
+                {%- form 'product', product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+                  <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                  <div class="product-form__buttons">
+                    <button
+                      type="submit"
+                      name="add"
+                      class="product-form__submit button button--full-width {% if block.settings.show_dynamic_checkout and product.selling_plan_groups == empty %}button--secondary{% else %}button--primary{% endif %}"
+                    {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
+                    >
+                        {%- if product.selected_or_first_available_variant.available -%}
+                          {{ 'products.product.add_to_cart' | t }}
+                        {%- else -%}
+                          {{ 'products.product.sold_out' | t }}
+                        {%- endif -%}
+                    </button>
+                    {%- if block.settings.show_dynamic_checkout -%}
+                      {{ form | payment_button }}
+                    {%- endif -%}
+                  </div>
+                {%- endform -%}
+              </product-form>
+
+              {{ 'component-pickup-availability.css' | asset_url | stylesheet_tag }}
+
+              {%- assign pick_up_availabilities = product.selected_or_first_available_variant.store_availabilities | where: 'pick_up_enabled', true -%}
+
+              <pickup-availability class="product__pickup-availabilities no-js-hidden"
+                {% if product.selected_or_first_available_variant.available and pick_up_availabilities.size > 0 %} available{% endif %}
+                data-base-url="{{ shop.url }}{{ routes.root_url }}"
+                data-variant-id="{{ product.selected_or_first_available_variant.id }}"
+                data-has-only-default-variant="{{ product.has_only_default_variant }}"
+              >
+                <template>
+                  <pickup-availability-preview class="pickup-availability-preview">
+                    {% render 'icon-unavailable' %}
+                    <div class="pickup-availability-info">
+                      <p class="caption-large">{{ 'products.product.pickup_availability.unavailable' | t }}</p>
+                      <button class="pickup-availability-button link link--text underlined-link">{{ 'products.product.pickup_availability.refresh' | t }}</button>
+                    </div>
+                  </div>
+                </template>
+              </pickup-availability>
+            </div>
         
       </div>
     </div>
