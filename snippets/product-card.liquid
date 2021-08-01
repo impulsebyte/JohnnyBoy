@@ -107,7 +107,43 @@
         
         {%- render 'cart-notification' -%}
         
-       
+       <!-- Add to cart code start -->
+        <form id="add-to-cart" class="product-form" action="/cart/add" method="post"> 
+          {% if product.variants.size > 1 %}
+          <div class="product-options">
+            <select name="id" data-productid="{{product.id}}" id="product-select" class="product-select">
+              {% for variant in product.variants %}
+              <option {% if variant == selectedVariant %} selected="selected" {% endif %} value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          {% else %}
+          <input type="hidden" name="id" data-productid="{{product.id}}" class="product-select" value="{{ product.variants[0].id }}" data-variant-title="{{ product.variants[0].title }}" />
+          {% endif %}
+          <div class="add-to-cart">
+            {% if product.available %}
+            <div class="product-form-submit-wrap">
+              <input type="submit" value="{{ 'products.product.add_to_cart' | t }}" />
+              <div class="add-to-cart-loader"></div>
+            </div>
+            {% capture cart_link %}
+            <a href="/cart/add">{{ 'products.product.cart_link' | t }}</a>
+            {% endcapture %}
+            {% capture continue_link %}
+            <a href="/collections/all">{{ 'products.product.continue_link' | t }}</a>
+            {% endcapture %}
+            {% capture checkout_link %}
+            <a href="/checkout">{{ 'products.product.checkout_link' | t }}</a>
+            {% endcapture %}
+            {% capture product_item %}
+            <span class='added-product-name'></span>
+            {% endcapture %}
+            {% else %}
+            <input type="button" class="disabled" disabled="disabled" value="{{ 'products.product.sold_out' | t }}" />
+            {% endif %}
+          </div>
+        </form>
+        <!-- Add to cart code end -->
         
       </div>
     </div>
