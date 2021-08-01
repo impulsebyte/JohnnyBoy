@@ -14,7 +14,7 @@
 
 @media screen and (min-width: 750px) {
   .banner {
-    min-height: 72rem;
+    min-height: 40rem;
     flex-direction: row;
   }
 }
