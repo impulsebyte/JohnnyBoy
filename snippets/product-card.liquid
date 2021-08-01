@@ -95,7 +95,34 @@
         <span class="caption-large light">{{ block.settings.description | escape }}</span>
 
         {% render 'price', product: product_card_product, price_class: '' %}
+        
+        {%- if ajax_cart -%}
+        <a href="javascript:void(0);" onclick="{{ func }}; return false;" class="ajax-spin-cart btn btn-cart">
+        <span>
+          <span class="cart-title"><i class="fa fa-shopping-basket"></i> {{ settings.cart_button_title }}</span>
+          <span class="cart-loading">{{ settings.wait_title }}</span>
+          <span class="cart-added">{{ settings.added_title }}</span>
+          <span class="cart-unavailable">{{ settings.unavailable_title }}</span>
+        </span>
+      </a>
+        {% endif %}
+        
       </div>
     </div>
   </a>
 </div>
+
+{%- if settings.product_cart_type == 'ajax_spin_cart' -%}
+<script>
+  $('.ajax-spin-cart').on('click', function() {
+    $(this).addClass('loading add-item');
+    setTimeout(function () {
+      $('.ajax-spin-cart').removeClass('loading');
+    },1000);
+    setTimeout(function () {
+      $('.ajax-spin-cart').removeClass("add-item");
+    },2000);
+
+  });
+</script>
+{%- endif -%}
