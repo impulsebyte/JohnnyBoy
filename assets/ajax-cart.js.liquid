@@ -162,7 +162,7 @@ var ajaxCart = (function(module, $) {
       addToCartSelector  : '.enj-add-to-cart-btn',
       cartCountSelector  : null,
       cartCostSelector   : null,
-      moneyFormat        : '$',
+      moneyFormat        : '${{amount}}',
       disableAjaxCart    : false,
       enableQtySelectors : true
     };
@@ -268,7 +268,7 @@ var ajaxCart = (function(module, $) {
     // Show empty cart
     if (cart.item_count === 0) {
       $cartContainer
-        .append('<p>' + "translation missing: en.cart.general.empty" + '</p>');
+        .append('<p>' + {{ 'cart.general.empty' | t | json }} + '</p>');
       cartCallback(cart);
       return;
     }
