@@ -101,7 +101,7 @@
       </div>
     </div>
   </a>
-   {%- if ajax_cart -%}
+   
         <a href="javascript:void(0);" onclick="{{ func }}; return false;" class="ajax-spin-cart btn btn-cart">
         <span>
           <span class="cart-title"><i class="fa fa-shopping-basket"></i> {{ settings.cart_button_title }}</span>
@@ -110,7 +110,7 @@
           <span class="cart-unavailable">{{ settings.unavailable_title }}</span>
         </span>
       </a>
-        {% endif %}
+        
 </div>
 
 {%- if settings.product_cart_type == 'ajax_spin_cart' -%}
