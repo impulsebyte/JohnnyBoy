@@ -1,12 +1,1287 @@
+<style>
+/* Search */
+  {% assign bg_search_color =  section.settings.bg_search_color %}
+  {% assign search_color =  section.settings.search_color %}
+  
+/* Cart Header */
+  {% assign bg_cart_color =  section.settings.bg_cart_color %}
+  {% assign cart_color =  section.settings.cart_color %}
+  
+/* Fixed Top Menu */
+  {% assign bg_fixtop_menu =  section.settings.bg_fix %}
+  {% assign color_fixed_top =  section.settings.color_fixed_top %}
+  
+/* Text Align Navigation */  
+  {% assign alignment_nav =  section.settings.alignment %}
+  /* Main Promotion */
+  {% assign bg_promotion_color =  section.settings.bg_promotion_color %}
+  {% assign text_promotion_color =  section.settings.text_promotion_color %}
+/* Main Navigation */
+  
+  {% assign bg_title =  section.settings.bg_title %}
+  {% assign color_title =  section.settings.color_title %}
+  {% assign bg_title_hover =  section.settings.bg_title_hover %}  
+  {% assign color_title_hover =  section.settings.color_title_hover %}
+  
+  {% assign nav_bg_color =  section.settings.nav_bg_color %}
+  {% assign nav_bg_hover_color =  section.settings.nav_bg_hover_color %}
+  {% assign nav_top_menu_color =  section.settings.nav_top_menu_color %}
+  
+  {% assign show_dropdown_arrow =  section.settings.show_dropdown_arrow %}
+  
+/*   Dropdown Menu */
+  {% assign nav_dropdown_border_style =  section.settings.nav_dropdown_border_style %}
+  {% assign nav_dropdown_border_color =  section.settings.nav_dropdown_border_color %}
+  {% assign nav_dropdown_bg_color =  section.settings.nav_dropdown_bg_color %}  
+  {% assign nav_dropdown_title_color =  section.settings.nav_dropdown_title_color %}
+  {% assign nav_dropdown_title_color_hover =  section.settings.nav_dropdown_title_color_hover %}  
+  {% assign nav_dropdown_link_color =  section.settings.nav_dropdown_link_color %}
+  {% assign nav_dropdown_link_bg_hover =  section.settings.nav_dropdown_link_bg_hover %}  
+  {% assign nav_dropdown_link_color_hover =  section.settings.nav_dropdown_link_color_hover %}
+  
+  
+   .wrapper-navigation  .site-nav .icon_sale{
+    color: {{ section.settings.color_lb_sale }};
+    background:{{ section.settings.bg_lb_sale }};
+  }
+  
+  .wrapper-navigation  .site-nav .icon_hot{
+    color: {{ section.settings.color_lb_hot }};
+    background:{{ section.settings.bg_lb_hot }};
+  }
+  
+  .wrapper-navigation  .site-nav .icon_new{
+    color: {{ section.settings.color_lb_new }};
+    background:{{ section.settings.bg_lb_new }};
+  }
+  
+
+/*  Navigation   */
+  .wrapper-navigation {
+    background-color: {{ settings.color_primary }};
+  }
+  .wrapper-navigation .wrapper-right .block-item a{
+    color: {{text_promotion_color}};
+  }
+  
+  .wrapper-navigation .wrapper-left{
+  	background-color: {{ settings.color_primary_cart }};
+  }
+  .wrapper-navigation .icon-menu .icon-line,.wrapper-navigation .icon-menu .icon-line:before, .wrapper-navigation .icon-menu .icon-line:after {
+    background: {{color_title}};
+  }
+  .wrapper-navigation .wrapper-left .categories-title{
+  color:{{color_title}};
+  }
+  .wrapper-navigation .wrapper-left .icon-menu .openmnu{
+    fill:{{color_title}};
+  }
+/*   .wrapper-navigation .wrapper-left .nav-bar{
+    background-color:{{nav_bg_color}};
+        border-radius: 0px 0 4px 4px;
+  } */
+  .site-nav > li:hover{
+  	background-color:{{nav_bg_hover_color}};
+  }
+  
+  .icon-nav .icon-line,
+  .icon-nav .icon-line:before,
+  .icon-nav .icon-line:after {
+    background-color: {{ nav_top_menu_color }};
+  }
+  
+  .wrapper-navigation .wrapper-left .site-nav li + li{
+    border-top-color: {{nav_dropdown_border_color}}
+      display: block;
+  }
+  
+
+  .site-nav > li > a {
+    color: {{ nav_top_menu_color }};
+  }  
+  .site-nav  li  a .fa{
+    color: {{ nav_top_menu_color }};
+    opacity: .2;
+    font-size:20px;
+  }
+  .site-nav  li:hover > a .fa{
+    opacity: 1;
+  }
+  .site-nav > li:hover > a,
+  .site-nav > li:focus > a {
+    color: {{ section.settings.nav_hover_color }};
+  }
+  
+/*  Dropdown Menu   */  
+  .site-nav-dropdown li > a,
+  .mega-menu .inner > a,
+  .mega-menu .inner .inner-wrap > a,
+  .mega-menu .featured-product h3,
+  .mega-menu .cate-title {
+    color: {{ nav_dropdown_title_color }};
+  }
+  
+  .site-nav-dropdown li > a:hover,
+  .site-nav-dropdown li > a:focus,
+  .mega-menu .inner > a:hover,
+  .mega-menu .inner > a:focus,
+  .mega-menu .cate-title:hover,
+  .mega-menu .cate-title:focus {
+  	color: {{ nav_dropdown_title_color_hover }};
+  }
+  
+  .site-nav-dropdown .site-nav-dropdown a,
+  .mega-menu .cate-shop-now {
+  	color: {{ nav_dropdown_link_color }};
+  }
+  
+  .site-nav-dropdown .site-nav-dropdown li a:hover,
+  .site-nav-dropdown .site-nav-dropdown li a,
+  .mega-menu .cate-shop-now:hover,
+  .mega-menu .cate-shop-now:focus {
+  	color: {{ nav_dropdown_link_color_hover }};
+  }   
+  
+  
+  .wrapper-navigation .site-nav .dropdow-lv2,
+  .site-nav .site-nav-dropdown {
+    background-color: {{ nav_dropdown_bg_color }};
+  }
+  .no-mega-menu .site-nav-dropdown li a,
+  .no-mega-menu .site-nav-dropdown li:hover > a,
+  .no-mega-menu .site-nav-dropdown li:focus > a {
+    color: {{ nav_dropdown_link_color_hover }};
+    background-color: {{ nav_dropdown_link_bg_hover }};
+  }
+  
+  .site-nav > li > a.sale{
+    color:{{section.settings.sale_color}}
+  }
+
+  .site-nav-dropdown li > a {
+    color: {{ nav_dropdown_link_color }};
+  }  
+  {% if section.settings.display_fixtop_menu %}
+  .is-sticky .header-bottom {
+    z-index: 100!important;
+  }
+
+  {% endif %}
+
+ 
+  @media (min-width:1025px) {
+    
+    {% unless show_dropdown_arrow %}
+    .site-nav li.dropdown .icon-dropdown {
+      display: none;
+    }
+    {% endunless %}
+
+    .nav-bar .site-nav {
+      text-align: {{ alignment_nav }};
+    }
+
+    .site-nav > li:hover > a span:not(.icon-dropdown),
+    .site-nav > li:focus > a span:not(.icon-dropdown) {
+      border-bottom-color: {{ nav_dropdown_title_color }};
+    }
+
+    .site-nav .mega-menu .site-nav-dropdown {
+      border: 1px solid rgba(0, 0, 0, 0.1);
+
+    }
+    .site-nav .no-mega-menu .site-nav-dropdown{
+    	border-left: 1px solid rgba(0,0,0,0.1);
+      border-right: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .site-nav .mega-menu .hl-shuffle-container{
+      display:block;
+      -webkit-column-count: 3;
+      column-count: 3;
+      margin: 0 -10px;
+    }
+    .site-nav .mega-menu .hl-shuffle-container .inner{
+      break-inside: avoid-column;
+      page-break-inside: avoid;
+      -webkit-column-break-inside: avoid;
+      max-width:100%;
+    }
+
+  }
+
+  @media (max-width: 1024px) {
+    .wrapper-navigation .site-nav .mega-menu .site-nav-dropdown .inner{
+      border-top-color: {{nav_dropdown_border_color}};
+    }
+    .wrapper-navigation .site-nav .style_4 .banner,
+    .wrapper-navigation .site-nav .mega-menu .column-right{
+      border-top:1px solid {{nav_dropdown_border_color}};
+      padding-top: 21px;
+    }
+    .wrapper-navigation .wrapper-left .site-nav .mega-menu .dropdow-lv2 .menu-mb-title{
+      border-bottom:1px solid {{nav_dropdown_border_color}};
+    }
+
+
+    .ft-multi-cur .currency-groups, .ft-multi-cur .lang-switcher{
+      border-top-color: {{nav_dropdown_border_color}}
+    }
+    .ft-multi-cur .currency-groups ul li a, .ft-multi-cur .lang-switcher ul li a,
+    .ft-multi-cur .currency-groups h5, .ft-multi-cur .lang-switcher h5{
+      color: {{ nav_top_menu_color }};
+    }
+    .wrapper-navigation{
+      border-top: 1px solid {{ bg_promotion_color }};
+      border-bottom: 1px solid {{ bg_promotion_color }};
+    }
+  }
+  
+  
+  @media screen and (min-width: 992px ){
+    
+  .wrapper-left {
+	-webkit-flex: 0 0 240px;
+	-ms-flex: 0 0 240px;
+	flex: 0 0 240px;
+	max-width: 240px;
+	position: relative;
+	cursor: pointer;
+	top: 0px !important;
+}
+  .categories-title {
+	padding: 12px 19px;
+	height: 100%;
+	display: flex;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	-webkit-align-items: center;
+	-moz-align-items: center;
+	-ms-align-items: center;
+	align-items: center;
+	-webkit-box-pack: flex-start;
+	-moz-box-pack: flex-start;
+	-ms-flex-pack: flex-start;
+	-webkit-justify-content: flex-start;
+	justify-content: flex-start;
+}
+.wrapper-navigation .wrapper-left .nav-bar {
+	display: none;
+	border-radius: 0px 0 4px 4px;
+	position: absolute;
+	top: 100%;
+	left: 0px;
+	width: 100%;
+	z-index: 999;
+	background-color: #fff;
+	box-shadow: 0 5px 10px #f0f0f0;
+}
+  .site-nav > li > a {
+	color: #fff;
+	display: flex;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	-webkit-align-items: center;
+	-moz-align-items: center;
+	-ms-align-items: center;
+	align-items: center;
+	-webkit-box-pack: flex-start;
+	-moz-box-pack: flex-start;
+	-ms-flex-pack: flex-start;
+	-webkit-justify-content: flex-start;
+	justify-content: flex-start;
+	font-weight: 500;
+	font-size: 14px;
+	text-decoration: none;
+	padding: 9px 15px 9px 20px;
+	line-height: 20px;
+}
+  .site-nav .no-mega-menu .site-nav-dropdown {
+	border-left: 0px solid rgba(0,0,0,0.1);
+	border-right: 1px solid rgba(0,0,0,0.1);
+	position: absolute;
+	left: 100%;
+	min-width: 260px;
+	top: -1px;
+	display: none;
+	margin: 0;
+    box-shadow: none;
+}
+
+
+  .nav-bar.show .item {
+	display: block;
+}
+  .wrapper-navigation .wrapper-left .site-nav li a:hover {
+    background-color: #fff;
+  }
+
+  .wrapper-navigation .wrapper-left .site-nav li a {
+	display: flex;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	-webkit-align-items: center;
+	-moz-align-items: center;
+	-ms-align-items: center;
+	align-items: center;
+	-webkit-box-pack: flex-start;
+	-moz-box-pack: flex-start;
+	-ms-flex-pack: flex-start;
+	-webkit-justify-content: flex-start;
+	justify-content: flex-start;
+	text-decoration: none;
+	padding: 2px 15px 2px 20px;
+	line-height: 20px;
+	color: #000000;
+    background-color: #f1f1f1;
+	
+}
+  .nav-bar ul.site-nav {
+	margin: 0;
+}
+  .wrapper-navigation .wrapper-left .categories-title .icon-menu {
+	display: flex;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	-webkit-align-items: center;
+	-moz-align-items: center;
+	-ms-align-items: center;
+	align-items: center;
+	-webkit-box-pack: flex-start;
+	-moz-box-pack: flex-start;
+	-ms-flex-pack: flex-start;
+	-webkit-justify-content: flex-start;
+	justify-content: flex-start;
+	margin-right: 15px;
+}
+  .wrapper-navigation .wrapper-left .categories-title span {
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 600;
+}
+  .wrapper-navigation .wrapper-left .site-nav > li > a .icon-dropdown,
+  .wrapper-navigation .wrapper-left .site-nav .site-nav-dropdown li a .icon-dropdown{
+	margin-left: auto;
+}
+  .wrapper-navigation .wrapper-right .block-item a .fa {
+	font-size: 25px;
+	margin-right: 15px;
+}
+  .wrapper-navigation .wrapper-right .block-item a {
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 12px;
+	display: flex;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	-webkit-align-items: center;
+	-moz-align-items: center;
+	-ms-align-items: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-moz-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	line-height: 15px;
+}
+  .site-nav li a .fa {
+    color: {{ settings.color_primary }};
+	opacity: 0.6;
+	font-size: 20px;
+}
+.wrapper-navigation .wrapper-left .site-nav > li.dropdown:hover > .site-nav-dropdown, 
+.wrapper-navigation .wrapper-left .site-nav .item.dropdown li.dropdown:hover > .site-nav-dropdown {
+	display: block;
+}
+
+  .header-main-area .ptb-15 {
+	padding: 15px 0;
+}
+  
+      
+  .wrapper-navigation .wrapper-right {
+	display: flex;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	-webkit-align-items: center;
+	-moz-align-items: center;
+	-ms-align-items: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-moz-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	width: -moz-calc(100% - 240px);
+	width: -webkit-calc(100% - 240px);
+	width: calc(100% - 240px);
+}
+/*         .nav-bar.show .site-nav > .item:hover > a {
+	background-color: #ffffff1a !important;
+} */
+.nav-bar.show .site-nav .menu-free-shipping.item a {
+	background-color: {{ settings.color_primary }};
+	color: #fff;
+	padding: 4px 15px 2px 20px;
+}
+    .nav-bar.show .site-nav > .item > a {
+	color: {{ settings.color_primary_cart }};
+}
+    .wrapper-navigation .nav-bar .site-nav .dropdown .first li a, 
+    .wrapper-navigation .nav-bar .site-nav .dropdown .second li a {
+	background-color: transparent;
+}
+    .wrapper-navigation .nav-bar .site-nav .dropdown .first > li a:hover { 
+      color: #fff;
+      background-color: #0ba856; 
+    }
+    .wrapper-navigation .nav-bar .site-nav .dropdown .second li a:hover {
+      color: #fff;
+	background-color: #e00523;
+}
+    .site-nav .no-mega-menu .site-nav-dropdown.first {
+	transform: translate(0%,-20%);
+	top: 0%;
+	left: 100%;
+}
+    .icon-menu .icon-line {
+	position: relative;
+	width: 20px;
+	height: 3px;
+	transition: 0.2s;
+	display: block;
+	float: right;
+}
+    .icon-menu .icon-line::before, .icon-menu .icon-line::after {
+	display: block;
+	content: "";
+	height: 3px;
+	width: 20px;
+	position: absolute;
+	transition: 0.2s;
+	display: block;
+}
+    .open_menu .icon-menu .icon-line::before, .is-open .icon-menu .icon-line::before {
+	top: 0;
+	transform: rotate(-45deg);
+}
+    .open_menu .icon-menu .icon-line::after, .is-open .icon-menu .icon-line::after {
+	top: 0;
+	transform: rotate(45deg);
+}
+    .wrapper-navigation .icon-menu .icon-line, .wrapper-navigation .icon-menu .icon-line::before, .wrapper-navigation .icon-menu .icon-line::after {
+	background: #fff;
+}
+    .icon-menu .icon-line::before {
+	top: -7px;
+}
+    .icon-menu .icon-line::after {
+	top: 7px;
+}
+    .open_menu .icon-menu .icon-line, .is-open .icon-menu .icon-line {
+	background: transparent !important;
+}
+    .header-configure-area ul li.user-hover .dropdown-list li a i {
+      padding-right: 8px;
+}
+    
+    }
+  
+  
+  @media screen and (max-width: 991px ){
+    .wrapper-navigation .wrapper-left {
+    	display: none !important;
+    }
+    #shopify-section-navigation {
+	display: none;
+}
+    
+    .wrapper-navigation .wrapper-right {
+      display: flex;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	-webkit-align-items: center;
+	-moz-align-items: center;
+	-ms-align-items: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-moz-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	width: 100%;
+}
+  }
+  
+</style>
+
+<div class="wrapper-navigation {% if section.settings.display_fixtop_menu %}sticky{% endif %}">
+  <div class="container">
+    <div class="row">
+      <div class="wrapper-left">
+        <a href="javascript:void(0)" class="categories-title ">
+          <div class="icon-menu">
+          <span class="icon-line"></span>  
+          </div>
+          {% render 'multilang' with section.settings.categories_title %}
+        </a>
+        <nav class="nav-bar{%if template contains 'index' and section.settings.show_category %} show{% endif %}" role="navigation">
+          {% render 'site-nav' %}
+          <div class="hd-option"></div>
+        </nav>
+      </div>
+      
+      <div class="wrapper-right grid-view" data-row="3" data-rowtb="3" data-rowtblg="3" data-rowbm="1">
+        <div class="block-item grid__item wide--one-third post-large--one-third large--one-third medium--one-third small--one-third ">
+          <a href="{{ section.settings.link_1 }}" title="">
+            {{ section.settings.icon_1 }}
+            {% render 'multilang' with section.settings.text_1 %}
+          </a>
+        </div>
+        <div class="block-item grid__item wide--one-third post-large--one-third large--one-third medium--one-third small--one-third ">
+          <a href="{{ section.settings.link_2 }}" title="">
+            {{ section.settings.icon_2 }}
+            {% render 'multilang' with section.settings.text_2 %}
+          </a>
+        </div>
+        <div class="block-item grid__item wide--one-third post-large--one-third large--one-third medium--one-third small--one-third ">
+          <a href="{{ section.settings.link_3 }}" title="">
+            {{ section.settings.icon_3 }}
+            {% render 'multilang' with section.settings.text_3 %}
+          </a>
+        </div>
+      </div>
+      
+    </div>
+  </div>  
+</div>
+
+<script>
+  window.dropdowncart_type = "{{ section.settings.dropdowncart_type }}";
+  window.fixtop_menu = "{{ section.settings.display_fixtop_menu }}";
+  
+</script>
+
+<script>
+  jQuery(document).ready(function(){
+  $(".wrapper-navigation .wrapper-left .categories-title").off('click').on("click",function(){
+          
+          $(this).parent().toggleClass("is-open");
+          $(this).parent().find(".nav-bar").toggleClass("show");
+  });
+            $(document).on('click', function(event) {
+          if (!$(event.target).closest('.wrapper-navigation .wrapper-left').length)  {
+                $(".wrapper-navigation .wrapper-left").removeClass("is-open");
+            $('.wrapper-navigation .wrapper-left .nav-bar').removeClass('show');
+          }
+        });
+
+    
+  });
+   
+    
+</script>
+
 {% schema %}
   {
-    "name": "Section name",
-    "settings": []
+    "name": "Navigation",
+	"max_blocks": 10,
+    "settings": [
+		  
+	  {
+        "type": "header",
+        "content": "Fixed Top Menu"
+    },
+    {
+        "type": "checkbox",
+        "id": "display_fixtop_menu",
+        "label": "Display Fix Top Menu?",
+        "default": true
+    },
+    {
+        "type": "link_list",
+        "id": "horizontal_linklist",
+        "label": "Menu",
+        "default": "main-menu"
+    },
+	  {
+        "type": "header",
+        "content": "Navigation Title"
+    },
+	  {
+    		"type" : "checkbox",
+    		"id" : "show_category",
+    		"label" : "Show Categories On Homepage",
+    		"default" : true 
+	  },
+	  {
+    		"type" : "text",
+    		"id" : "categories_title",
+    		"label" : "Title Categories",
+    		"default" : "Categories" 
+	  },
+	  {
+    		"type" : "color",
+    		"id" : "bg_title", 
+    		"label" : "Background Categories",
+    		"default" : "#2874f0"
+    },
+	  {
+    		"type" : "color",
+    		"id" : "color_title",
+    		"label" : "Color Title",
+    		"default" : "#fff"
+    },
+	 
+	  {
+        "type": "header",
+        "content": "promotion bar"
+    },
+ 	  {
+        "type": "color",
+        "id": "bg_promotion_color",
+        "label": "Background Color",
+        "default": "#595555"
+    },
+    {
+        "type": "color",
+        "id": "text_promotion_color",
+        "label": "Text Color",
+        "default": "#fff"
+    },
+    {
+        "type": "text",
+        "id" : "icon_1",
+        "label" : "Icon #01",
+        "info" : "[Find your Icon](https://fontawesome.com/v4.7.0/icons/)."
+    },
+    {
+        "type" : "text",
+        "id" : "text_1",
+        "label" : "Text #01",
+        "default" : "Free Shipping on all orders *"
+    },
+    {
+        "type" : "url",
+        "id" : "link_1",
+        "label" : "Link #01",
+		    "info" : "======================"
+    },
+	  {
+        "type": "text",
+        "id" : "icon_2",
+        "label" : "Icon #02",
+        "info" : "[Find your Icon](https://fontawesome.com/v4.7.0/icons/)."
+    },
+    {
+        "type" : "text",
+        "id" : "text_2",
+        "label" : "Text #02",
+        "default" : "Free Shipping on all orders *"
+    },
+    {
+        "type" : "url",
+        "id" : "link_2",
+        "label" : "Link #02",
+		    "info" : "======================"
+    },
+	  {
+        "type": "text",
+        "id" : "icon_3",
+        "label" : "Icon #03",
+        "info" : "[Find your Icon](https://fontawesome.com/v4.7.0/icons/)."
+    },
+    {
+        "type" : "text",
+        "id" : "text_3",
+        "label" : "Text #03",
+        "default" : "Free Shipping on all orders *"
+    },
+    {
+        "type" : "url",
+        "id" : "link_3",
+        "label" : "Link #03",
+		    "info" : "======================"
+    },
+	  
+	  {
+        "type": "header",
+        "content": "Navigation Text alignment"
+    },
+
+	  {
+        "type": "select",
+        "id": "alignment",
+        "label": "Text alignment",
+        "default": "right",
+        "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+        ]
+      },
+
+	  {
+        "type": "header",
+        "content": "Level Top"
+      },
+      {
+        "type": "color",
+        "id": "nav_bg_color",
+        "label": "Nav Background Color"
+      },
+		{
+        "type": "color",
+        "id": "nav_bg_hover_color",
+        "label": "Nav Hover Background Color"
+      },
+      {
+        "type": "color",
+        "id": "nav_top_menu_color",
+        "label": "Nav Top Menu Color Text",
+        "default": "#fff"
+      }, 
+      {
+        "type": "color",
+        "id": "nav_hover_color",
+        "label": "Nav Link Top Hover Color",
+        "default": "#fff"
+      },    
+      {
+        "type": "checkbox",
+        "id": "show_dropdown_arrow",
+        "label": "Show dropdown arrow icon?"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_new",
+        "label": "Display icon Sale at Mega Menu Items?",
+        "default": true
+      },
+	   {
+          "type": "text",
+          "id": "megamenu_items_new",
+          "label": "Sale At Mega Menu Items",
+          "default": "Collections"
+      },
+	  {
+        "type": "color",
+        "id": "sale_color",
+        "label": "Sale Text Color",
+        "default": "#f62711"
+      },
+	
+	  {
+		"type" : "header",
+		"content" : "Label"
+	  },
+	  {
+		"type" : "checkbox",
+		"id" : "enable_sale",
+		"label" : "Display Label Sale",
+		"default" : true
+	  },
+	  {
+		"type" : "text",
+		"id" : "lb_sale",
+		"label" : "Label sale",
+		"default" : "Sale"
+	  },
+	  {
+		"type" : "textarea",
+		"id" : "sale_item_1",
+		"label" : "Label Sale Items"
+	  },
+	  {
+		"type" : "color",
+		"id" : "bg_lb_sale",
+		"label" : "Background color label sale",
+		"default" : "#ef6454"
+	  },
+	  {
+		"type" : "color",
+		"id" : "color_lb_sale",
+		"label" : "Text Color label sale",
+		"default" : "#fff"
+	  },
+	  {
+		"type" : "checkbox",
+		"id" : "enable_new_1",
+		"label" : "Display Label New",
+		"default" : true
+	  },
+	  {
+		"type" : "text",
+		"id" : "lb_new",
+		"label" : "Label New",
+		"default" : "New"
+	  },
+	  {
+		"type" : "textarea",
+		"id" : "new_item",
+		"label" : "Label New Items"
+	  },
+	  {
+		"type" : "color",
+		"id" : "bg_lb_new",
+		"label" : "Background color label New",
+		"default" : "#06bfe2"
+	  },
+	  {
+		"type" : "color",
+		"id" : "color_lb_new",
+		"label" : "Text Color label New",
+		"default" : "#fff"
+	  },
+	  {
+		"type" : "checkbox",
+		"id" : "enable_hot",
+		"label" : "Display Label Hot",
+		"default" : true
+	  },
+	  {
+		"type" : "text",
+		"id" : "lb_hot",
+		"label" : "Label Hot",
+		"default" : "Hot"
+	  },
+	  {
+		"type" : "textarea",
+		"id" : "hot_item",
+		"label" : "Label Hot Items"
+	  },
+	  {
+		"type" : "color",
+		"id" : "bg_lb_hot",
+		"label" : "Background color label Hot",
+		"default" : "#ffbb49"
+	  },
+	  {
+		"type" : "color",
+		"id" : "color_lb_hot",
+		"label" : "Text Color label Hot",
+		"default" : "#fff"
+	  },
+		
+
+      {
+        "type": "header",
+        "content": "Dropdown Menu"
+      },
+      
+      {
+        "type": "color",
+        "id": "nav_dropdown_border_color",
+        "label": "Mega menu Border Color",
+        "default": "#000"
+      },
+      {
+        "type": "color",
+        "id": "nav_dropdown_bg_color",
+        "label": "Mega menu Background Color",
+        "default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "nav_dropdown_title_color",
+        "label": "Mega menu Title Color",
+        "default": "#db2769"
+      },
+	  {
+        "type": "color",
+        "id": "nav_dropdown_title_color_hover",
+        "label": "Mega menu Title Color Hover",
+        "default": "#db2769"
+      },
+      {
+        "type": "color",
+        "id": "nav_dropdown_link_color",
+        "label": "Mega menu Link Color",
+        "default": "#505050"
+      },
+	
+	  {
+        "type": "color",
+        "id": "nav_dropdown_link_bg_hover",
+        "label": "Dropdown Basic menu Background Color",
+        "default": "#f4f4f4"
+      },
+      
+      {
+        "type": "color",
+        "id": "nav_dropdown_link_color_hover",
+        "label": "Dropdown Basic menu hover color",
+        "default": "#fff"
+      },
+	  {
+        "type": "header",
+        "content": "Mega Menu"
+      },
+      {
+        "type": "checkbox",
+        "id": "display_megamenu",
+        "label": "Display Mega Menu?",
+        "default": true
+      }
+	],
+	"blocks": [
+	  {
+	  	"type": "style_1",
+      	"name": "Style 1",
+      	"settings": [
+		  {
+			"type" : "header",
+			"content" : "Column Left"
+		  },
+		  {
+            "type": "text",
+            "id": "megamenu_items_1",
+            "label": "Mega Menu Items for Style 1",
+            "default": "Catalog"
+          },
+          {
+            "type": "text",
+            "id": "min_height_style_1",
+            "label": "Width of Mega menu (Desktop)",
+            "default": "960px",
+			"info": "Maximum width of Mega menu is 960px"
+          },
+		  {
+            "type": "select",
+            "id": "style_1_per_row",
+            "label": "The number of category columns per now",
+			
+            "options": [
+              {
+                "value": "1",
+                "label": "1"
+              },
+              {
+                "value": "2",
+                "label": "2"
+              },
+              {
+                "value": "3",
+                "label": "3"
+              },
+              {
+                "value": "4",
+                "label": "4"
+              },
+			  {
+                "value": "5",
+                "label": "5"
+              }
+            ],
+            "default": "2",
+			"info": "you can choose 1,2,3,4 or 5 category columns for mega menu"
+     	  },
+		  {
+			"type" : "header",
+			"content" : "Column Right"
+		  },
+		  {
+			"type" : "header",
+			"content" : "Column right 1"
+		  },
+		  {
+			"type" : "checkbox",
+			"id" : "dpl_column_first_style_1",
+			"label" : "Display column right 1",
+			"default" : true
+		  },
+		  {
+			"type" : "header",
+			"content" : "Product"
+		  },
+		  {
+            "type": "text",
+            "id": "title_featured_product",
+            "label": "Title Product",
+			"default" : "Featured Products"
+          },
+		  {
+            "type": "product",
+            "id": "featured_product",
+            "label": "Product"
+          },
+		  {
+			"type" : "header",
+			"content" : "Column right 2"
+		  },
+		  {
+			"type" : "checkbox",
+			"id" : "dpl_column_second_style_1",
+			"label" : "Display column right 2",
+			"default" : true
+		  },
+		  {
+			"type" : "header",
+			"content" : "Banner"
+		  },	  
+		  {
+            "type": "image_picker",
+            "id": "banner_first_style_1",
+            "label": "Upload a new image",
+            "info": "210px x 330px recommended"
+          },
+		  {
+			"type": "url",
+			"id": "link_banner_first_style_1",
+			"label": "Link image "
+		  }
+		]
+      },	  
+	  {
+	  	"type": "style_2",
+      	"name": "Style 2",
+      	"settings": [
+		  {
+			"type" : "header",
+			"content" : "Column Left"
+		  },
+		  {
+            "type": "text",
+            "id": "megamenu_items_2",
+            "label": "Mega Menu Items for Style 2",
+            "default": "Catalog"
+          },
+		  {
+            "type": "text",
+            "id": "min_height_style_2",
+            "label": "Width of Mega menu (Desktop)",
+            "default": "960px",
+			"info": "Maximum width of Mega menu is 960px"
+          },
+		  {
+            "type": "select",
+            "id": "style_2_per_row",
+            "label": "The number of category columns per now",
+            "options": [
+              {
+                "value": "1",
+                "label": "1"
+              },
+              {
+                "value": "2",
+                "label": "2"
+              },
+              {
+                "value": "3",
+                "label": "3"
+              },
+              {
+                "value": "4",
+                "label": "4"
+              },
+			  {
+                "value": "5",
+                "label": "5"
+              }
+            ],
+            "default": "2",
+			"info": "you can choose 1,2,3,4 or 5 category columns for mega menu"
+     	  },
+		  {
+			"type" : "header",
+			"content" : "Column Right"
+		  },
+		  {
+			"type" : "header",
+			"content" : "Column right 1"
+		  },
+		  {
+			"type" : "checkbox",
+			"id" : "dpl_column_first_style_2",
+			"label" : "Display column right 1",
+			"default" : true
+		  },	  
+		  {
+            "type": "image_picker",
+            "id": "banner_first_style_2",
+            "label": "Upload a new image",
+            "info": "210px x 150px recommended" 
+          },
+		  {
+			"type": "url",
+			"id": "link_banner_first_style_2",
+			"label": "Link image "
+		  },	  
+		  {
+			"type" : "header",
+            "content" : "Image Second"
+		  },
+		  {
+            "type": "image_picker",
+            "id": "banner_second_style_2",
+            "label": "Upload a new image",
+            "info": "210px x 150px recommended"
+          },
+		  {
+			"type": "url",
+			"id": "link_banner_second_style_2",
+			"label": "Link image "
+		  },
+		  {
+			"type" : "header",
+			"content" : "Column right 2"
+		  },
+		  {
+			"type" : "checkbox",
+			"id" : "dpl_column_second_style_2",
+			"label" : "Display column right 2",
+			"default" : true
+		  },  
+		  {
+			"type" : "header",
+            "content" : "Image third"
+		  },
+		  {
+            "type": "image_picker",
+            "id": "banner_third_style_2",
+            "label": "Upload a new image",
+            "info": "210px x 330px recommended"
+          },
+		  {
+			"type": "url",
+			"id": "link_banner_third_style_2",
+			"label": "Link image "
+		  }
+		]
+      },	  
+	  {
+	  	"type": "style_3",
+      	"name": "Style 3",
+      	"settings": [
+		  {
+            "type": "text",
+            "id": "megamenu_items_3",
+            "label": "Mega Menu Items for Style 3",
+            "default": "Catalog"
+          },
+		  {
+            "type": "text",
+            "id": "min_height_style_3",
+            "label": "Width of Mega menu (Desktop)",
+            "default": "630px",
+			"info": "Maximum width of Mega menu is 960px"
+          },
+		  {
+            "type": "select",
+            "id": "style_3_per_row",
+            "label": "The number of category columns per now",
+            "options": [
+              {
+                "value": "1",
+                "label": "1"
+              },
+              {
+                "value": "2",
+                "label": "2"
+              },
+              {
+                "value": "3",
+                "label": "3"
+              },
+              {
+                "value": "4",
+                "label": "4"
+              },
+			  {
+                "value": "5",
+                "label": "5"
+              }
+            ],
+            "default": "3",
+			"info": "you can choose 1,2,3,4 or 5 category columns for mega menu"
+		  }
+		]
+      },	  
+	  {
+	  	"type": "style_4",
+      	"name": "Style 4",
+      	"settings": [		  
+		  {
+			"type" : "header",
+			"content" : "Column Left"
+		  },
+		  {
+            "type": "text",
+            "id": "megamenu_items_4",
+            "label": "Mega Menu Items for Style 4",
+            "default": "Catalog"
+          },
+			  {
+            "type": "text",
+            "id": "min_height_style_4",
+            "label": "Width of Mega menu (Desktop)",
+            "default": "960px",
+			"info": "Maximum width of Mega menu is 960px"
+          },
+		  {
+            "type": "select",
+            "id": "style_4_per_row",
+            "label": "The number of category columns per now",
+			
+            "options": [
+              {
+                "value": "1",
+                "label": "1"
+              },
+              {
+                "value": "2",
+                "label": "2"
+              },
+              {
+                "value": "3",
+                "label": "3"
+              },
+              {
+                "value": "4",
+                "label": "4"
+              },
+			  {
+                "value": "5",
+                "label": "5"
+              }
+            ],
+            "default": "3",
+			"info": "you can choose 1,2,3,4 or 5 category columns for mega menu"
+		  },
+		  {
+			"type" : "header",
+			"content" : "Column Right"
+		  },	  
+		  {
+			"type" : "checkbox",
+			"id" : "dpl_column_first_style_4", 
+			"label" : "Display column right",
+			"default" : true
+		  },	  
+		  {
+            "type": "image_picker",
+            "id": "banner_first_style_4",
+            "label": "Upload a new image",
+            "info": "280px x 320px recommended" 
+          },
+		  {
+			"type": "url",
+			"id": "link_banner_first_style_4",
+			"label": "Link image "
+		  }
+		  
+		]
+      }
+	]
   }
 {% endschema %}
-
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}
