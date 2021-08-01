@@ -111,17 +111,17 @@
         <form id="add-to-cart" class="product-form" action="/cart/add" method="post"> 
           {% if product.variants.size > 1 %}
           <div class="product-options">
-            <select name="id" data-productid="{{product.id}}" id="product-select" class="product-select">
-              {% for variant in product.variants %}
+            <select name="id" data-productid="{{product_card_product.id}}" id="product-select" class="product-select">
+              {% for variant in product_card_product.variants %}
               <option {% if variant == selectedVariant %} selected="selected" {% endif %} value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money }}</option>
               {% endfor %}
             </select>
           </div>
           {% else %}
-          <input type="hidden" name="id" data-productid="{{product.id}}" class="product-select" value="{{ product.variants[0].id }}" data-variant-title="{{ product.variants[0].title }}" />
+          <input type="hidden" name="id" data-productid="{{product_card_product.id}}" class="product-select" value="{{ product_card_product.variants[0].id }}" data-variant-title="{{ product_card_product.variants[0].title }}" />
           {% endif %}
           <div class="add-to-cart">
-            {% if product.available %}
+            {% if product_card_product.available %}
             <div class="product-form-submit-wrap">
               <input type="submit" value="{{ 'products.product.add_to_cart' | t }}" />
               <div class="add-to-cart-loader"></div>
