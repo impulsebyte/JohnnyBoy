@@ -105,43 +105,15 @@
     </div>
   </a>
   
-   <!-- Add to cart code start -->
-        <form id="add-item-qv" class="product-form" action="/cart/add" method="post"> 
-          {% if product_card_product.variants.size > 1 %}
-          <div class="product-options">
-            <select name="id" data-productid="{{product_card_product.id}}" id="product-select" class="product-select">
-              {% for variant in product_card_product.variants %}
-              <option {% if variant == selectedVariant %} selected="selected" {% endif %} value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money }}</option>
-              {% endfor %}
-            </select>
-          </div>
-          {% else %}
-          <input type="hidden" name="id" data-productid="{{product_card_product.id}}" class="product-select" value="{{ product_card_product.variants[0].id }}" data-variant-title="{{ product_card_product.variants[0].title }}" />
-          {% endif %}
-          <div class="add-to-cart">
-            {% if product_card_product.available %}
-            <div class="product-form-submit-wrap">
-              <input type="submit" value="{{ 'products.product.add_to_cart' | t }}" />
-              <div class="add-to-cart-loader"></div>
-            </div>
-            {% capture cart_link %}
-            <a href="/cart/add">{{ 'products.product.cart_link' | t }}</a>
-            {% endcapture %}
-            {% capture continue_link %}
-            <a href="/collections/all">{{ 'products.product.continue_link' | t }}</a>
-            {% endcapture %}
-            {% capture checkout_link %}
-            <a href="/checkout">{{ 'products.product.checkout_link' | t }}</a>
-            {% endcapture %}
-            {% capture product_item %}
-            <span class='added-product-name'></span>
-            {% endcapture %}
-            {% else %}
-            <input type="button" class="disabled" disabled="disabled" value="{{ 'products.product.sold_out' | t }}" />
-            {% endif %}
-          </div>
-        </form>
-        <!-- Add to cart code end -->
+   <form method="post" action="/cart/add" class="btn-icon">
+                  <span class="sr-only">{{ 'products.product.addtocart' | t }}</span>
+                  <input type="hidden" name="id" value="{{ product_card_product.variants.first.id }}" />
+                  <button type="submit" name="add" id="AddToCart{{ product_card_product.id }}" class="addcart no-border text-uppercase enj-add-to-cart-btn" data-toggle="tooltip" title="Add to Cart">
+
+                    <span>Add to Cart</span>
+                    
+                  </button>
+                </form>
 </div>
 
 
