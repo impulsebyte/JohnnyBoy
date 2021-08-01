@@ -96,18 +96,18 @@
 
         {% render 'price', product: product_card_product, price_class: '' %}
         
-       <form method="post" action="/cart/add" class="add-to-cart">
-              <input type="hidden" name="id" value="{{ product_card_product.variants.first.id }}" />
-              <button type="submit" name="add" id="AddToCart{{ product_card_product.id }}" class="enj-add-to-cart-btn addcart-link pull-left">
-                <span>Add to Cart</span>
-              </button>
-            </form>
+       
         
       </div>
     </div>
   </a>
    <div class="add_to_cart_ajax">
-        
+        <form method="post" action="/cart/add" class="add-to-cart">
+              <input type="hidden" name="id" value="{{ product_card_product.variants.first.id }}" />
+              <button type="submit" name="add" id="AddToCart{{ product_card_product.id }}" class="enj-add-to-cart-btn addcart-link pull-left">
+                <span>Add to Cart</span>
+              </button>
+            </form>
   </div>
         
 </div>
