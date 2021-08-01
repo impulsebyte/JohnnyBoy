@@ -96,7 +96,8 @@
         "image_ratio": "portrait",
         "show_secondary_image": false,
         "add_image_padding": false,
-        "show_vendor": true
+        "show_vendor": true,
+        "ajax_cart": true
       }
     },
     "featured_products": {
@@ -110,7 +111,8 @@
         "image_ratio": "square",
         "show_secondary_image": true,
         "add_image_padding": false,
-        "show_vendor": true
+        "show_vendor": true,
+        "ajax_cart": false
       }
     },
     "image_text": {
@@ -168,7 +170,8 @@
         "image_ratio": "square",
         "show_secondary_image": false,
         "add_image_padding": false,
-        "show_vendor": false
+        "show_vendor": false,
+        "ajax_cart": false
       }
     }
   },
