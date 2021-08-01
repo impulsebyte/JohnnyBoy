@@ -102,16 +102,15 @@
     </div>
   </a>
    <div class="add_to_cart_ajax">
-        <a href="javascript:void(0);" onclick="{{ func }}; return false;" class="ajax-spin-cart btn btn-cart">
-        <span>
-          <span class="cart-title"><i class="fa fa-shopping-basket"></i> Add to Cart</span>
-        </span>
-      </a>
+        <form  action="/cart/add" method="post" class="variants clearfix" id="cart-form-{{ product.id }}">
+                <input type="hidden" name="id" value="{{ product.variants[0].id }}" />
+                 <a class="add-cart-btn" title="{{ 'products.product.cart' | t }}">{% include 'icon-cart' %}</a>
+              </form>
   </div>
         
 </div>
 
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 <script>
 /**
  * Module to ajaxify all add to cart forms on the page.
@@ -144,7 +143,7 @@ Shopify.AjaxifyCart = (function($) {
     feedbackPosition:              'nextButton',
     
     // What you will never need to change
-    addToCartBtnSelector:          'ajax-spin-cart',
+    addToCartBtnSelector:          '[type="submit"]',
     addToCartFormSelector:         'form[action="/cart/add"]',
     shopifyAjaxAddURL:             '/cart/add.js',
     shopifyAjaxCartURL:            '/cart.js'
