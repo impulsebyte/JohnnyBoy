@@ -96,7 +96,7 @@
 
   .collection-hero__image-container {
     align-self: stretch;
-    flex: 1 0 50%;
+    flex: 1 0 25%;
     margin-left: 3rem;
     min-height: 20rem;
   }
