@@ -12,6 +12,11 @@
     {% render 'product-card', show_vendor: section.settings.show_vendor %}
 {% endcomment %}
 
+{% assign variant = product_card_product.selected_or_first_available_variant %}
+{% if product_card_product.available %}
+{% assign func = "Shopify.addItem(" | append: variant.id | append: ", 1)" %}
+{% endif %} 
+
 <div class="card-wrapper">
   <a href="{{ product_card_product.url | default: '#' }}" class="full-unstyled-link">
     <span class="visually-hidden">{{ product_card_product.title | escape }}</span>
@@ -102,12 +107,12 @@
     </div>
   </a>
    <div class="add_to_cart_ajax">
-        <form method="post" action="/cart/add" class="add-to-cart">
-              <input type="hidden" name="id" value="{{ product_card_product.variants.first.id }}" />
-              <button type="submit" name="add" id="AddToCart{{ product_card_product.id }}" class="enj-add-to-cart-btn addcart-link pull-left">
-                <span>Add to Cart</span>
-              </button>
-            </form>
+        <a href="javascript:void(0);" class="action-btn cart cart-item action-cart" onclick="{{ func }}; return false;" title="{{ 'products.product.add_to_cart' | t }}">
+        <i class="icon-handbag"></i>
+        <i class="icon-settings fa-spin"></i>
+        <i class="fa fa-check"></i>
+            <i class="fa fa-times"></i>
+      </a>
   </div>
         
 </div>
