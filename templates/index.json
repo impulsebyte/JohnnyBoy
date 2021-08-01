@@ -158,6 +158,7 @@
     },
     "1627797422d297179a": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "title": "Best Seller",
         "collection": "best-seller",
