@@ -105,14 +105,14 @@
 
         {% render 'price', product: product_card_product, price_class: '' %}
         
-        {%- assign product_form_id = 'product-form-' | append: section.id -%}
+       
         
-       <div {{ block.shopify_attributes }}>
-              {%- form 'product', product, id: 'product-form-installment', class: 'installment caption-large' -%}
-                <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-                {{ form | payment_terms }}
-              {%- endform -%}
-            </div>
+        <form method="post" action="/cart/add" class="add-to-cart">
+              <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" />
+              <button type="submit" name="add" id="AddToCart{{ product.id }}" class="enj-add-to-cart-btn addcart-link pull-left">
+                <span>Add to Cart</span>
+              </button>
+            </form>
         
       </div>
     </div>
