@@ -96,10 +96,12 @@
 
         {% render 'price', product: product_card_product, price_class: '' %}
         
-       <form  action="/cart/add" method="post" class="variants clearfix" id="cart-form-{{ product_card_product.id }}">
-                <input type="hidden" name="id" value="{{ product_card_product.variants[0].id }}" />
-                 <a class="add-cart-btn" title="{{ 'products.product_card_product.cart' | t }}">{% render 'icon-cart' %}</a>
-              </form>
+       <form method="post" action="/cart/add" class="add-to-cart">
+              <input type="hidden" name="id" value="{{ product_card_product.variants.first.id }}" />
+              <button type="submit" name="add" id="AddToCart{{ product_card_product.id }}" class="enj-add-to-cart-btn addcart-link pull-left">
+                <span>Add to Cart</span>
+              </button>
+            </form>
         
       </div>
     </div>
