@@ -106,7 +106,6 @@
   </a>
   
    <form method="post" action="/cart/add" class="btn-icon">
-                  <span class="sr-only">{{ 'products.product.addtocart' | t }}</span>
                   <input type="hidden" name="id" value="{{ product_card_product.variants.first.id }}" />
                   <button type="submit" name="add" id="AddToCart{{ product_card_product.id }}" class="addcart no-border text-uppercase enj-add-to-cart-btn" data-toggle="tooltip" title="Add to Cart">
 
