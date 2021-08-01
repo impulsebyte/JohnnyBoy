@@ -96,16 +96,16 @@
 
         {% render 'price', product: product_card_product, price_class: '' %}
         
-       
+       <form  action="/cart/add" method="post" class="variants clearfix" id="cart-form-{{ product.id }}">
+                <input type="hidden" name="id" value="{{ product.variants[0].id }}" />
+                 <a class="add-cart-btn" title="{{ 'products.product.cart' | t }}">{% render 'icon-cart' %}</a>
+              </form>
         
       </div>
     </div>
   </a>
    <div class="add_to_cart_ajax">
-        <form  action="/cart/add" method="post" class="variants clearfix" id="cart-form-{{ product.id }}">
-                <input type="hidden" name="id" value="{{ product.variants[0].id }}" />
-                 <a class="add-cart-btn" title="{{ 'products.product.cart' | t }}">{% render 'icon-cart' %}</a>
-              </form>
+        
   </div>
         
 </div>
