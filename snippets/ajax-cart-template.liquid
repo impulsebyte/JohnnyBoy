@@ -1,0 +1,92 @@
+<!-- /snippets/ajax-cart-template.liquid -->
+{% comment %}
+
+  This snippet provides the default handlebars.js templates for
+  the ajax cart plugin. Use the raw liquid tags to keep the
+  handlebar.js template tags as available hooks.
+
+{% endcomment %}
+<script id="CartTemplate" type="text/template">
+  {% raw %}
+  
+    <form action="/cart" method="post" novalidate class=" ajaxcart">
+      <ul class="list mini-products-list margin_top_50 margin_bottom_50">
+        {{#items}} 
+        <li class="item-cart flex margin_bottom_20" data-line="{{line}}">
+          
+            <div class="product-img-wrap">
+                <a href="{{url}}" class="img-responsive product-mini__img">
+                  <img src="{{img}}" alt="{{name}}">
+                  
+                </a>
+            </div> 
+            <!-- .product-mini__img -->
+            <div class="product-details space_left_20">
+            	<div class="inner-left">
+                  <div class="product-name title-font"><a href="{{url}}" tabindex="0" class="link-default">{{name}}</a></div>
+                  {{#if variation}}
+                        <span class="ajaxcart__product-meta des-font">{{variation}}</span>
+                      {{/if}}
+                      {{#properties}}
+                        {{#each this}}
+                          {{#if this}}
+                            <span class="ajaxcart__product-meta des-font">{{@key}}: {{this}}</span>
+                          {{/if}}
+                        {{/each}}
+                      {{/properties}}
+                  <div class="product-price number-font">{{{price}}} <span>(x{{itemQty}})</span></div>
+                  
+               </div>
+            </div>
+            <!-- .product-mini__body -->
+            
+            <!-- .product-mini__button -->
+          
+          <!-- .product-mini -->
+        </li>
+    {{/items}}
+      </ul>
+      <div class="bottom-cart">
+        <div class="cart-price number-font flex margin_bottom_50">
+              <span>Subtotal</span>
+              <span class="price-total">{{{totalPrice}}}</span>
+          </div>
+          <div class="button-cart des-font">
+              <a href="/cart" class="cart-btn btn-viewcart btn-nixx full-width margin_bottom_20">{% endraw %}{{ 'minicart.general.view_cart' | t }}{% raw %}</a>
+              <a href="/checkout" class="cart-btn e-checkout btn-nixx full-width">{% endraw %}{{ 'minicart.general.checkout' | t }}{% raw %}</a>
+          </div>
+      </div>
+     </form>   
+  {% endraw %}
+  </script>
+  <script id="AjaxQty" type="text/template">
+  {% raw %}
+    <div class="ajaxcart__qty">
+      <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--minus icon-fallback-text" data-id="{{id}}" data-qty="{{itemMinus}}">
+        <span class="icon icon-minus" aria-hidden="true"></span>
+        <span class="fallback-text">&minus;</span>
+      </button>
+      <input type="text" class="ajaxcart__qty-num" value="{{itemQty}}" min="0" data-id="{{id}}" aria-label="quantity" pattern="[0-9]*">
+      <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--plus icon-fallback-text" data-id="{{id}}" data-qty="{{itemAdd}}">
+        <span class="icon icon-plus" aria-hidden="true"></span>
+        <span class="fallback-text">+</span>
+      </button>
+    </div>
+  {% endraw %}
+  </script>
+  <script id="JsQty" type="text/template">
+  {% raw %}
+    <div class="e-quantity js-qty">
+    	<input type="text" class="qty input-text js-qty__num input-number menu-font" value="{{itemQty}}" min="1" data-id="{{id}}" aria-label="quantity" pattern="[0-9]*" name="{{inputName}}" id="{{inputId}}">
+    	<button type="button" class="quantity-right-plus btn-number js-qty__adjust js-qty__adjust--plus icon-fallback-text input-group-button absolute up-btn" data-id="{{id}}" data-qty="{{itemAdd}}">
+        	<i class="ti-angle-up input-number-increment"></i>
+      	</button>
+      	<button type="button" class="quantity-left-minus btn-number js-qty__adjust js-qty__adjust--minus icon-fallback-text input-group-button absolute down-btn" data-id="{{id}}" data-qty="{{itemMinus}}">
+        	<i class="ti-angle-down input-number-decrement"></i>
+      	</button>
+   		
+      
+      
+    </div>
+  {% endraw %}
+  </script>
