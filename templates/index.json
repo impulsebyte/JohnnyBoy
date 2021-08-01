@@ -86,7 +86,6 @@
     },
     "162776267085f047c8": {
       "type": "collection-list",
-      "disabled": true,
       "blocks": {
         "162776267085f047c8-0": {
           "type": "featured_collection",
@@ -97,27 +96,34 @@
         "162776267085f047c8-1": {
           "type": "featured_collection",
           "settings": {
-            "collection": ""
+            "collection": "best-picks"
           }
         },
         "162776267085f047c8-2": {
           "type": "featured_collection",
           "settings": {
-            "collection": ""
+            "collection": "pope"
+          }
+        },
+        "b1fe2376-a06c-4c50-b896-af64eb56582d": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "tarzo"
           }
         }
       },
       "block_order": [
         "162776267085f047c8-0",
         "162776267085f047c8-1",
-        "162776267085f047c8-2"
+        "162776267085f047c8-2",
+        "b1fe2376-a06c-4c50-b896-af64eb56582d"
       ],
       "settings": {
         "title": "Collections",
         "image_ratio": "square",
         "color_scheme": "background-1",
         "swipe_on_mobile": false,
-        "image_padding": false,
+        "image_padding": true,
         "show_view_all": false
       }
     },
