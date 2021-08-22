@@ -259,7 +259,7 @@ Shopify.cartUpdateInfo = function(cart, cart_cell_id) {
   }
 
   changeHtmlValue(".shopping-cart__total", Shopify.formatMoney(cart.total_price, formatMoney));
-  changeHtmlValue(".bigcounter", cart.item_count);
+  changeHtmlValue(".cart-count-bubble", cart.item_count);
 
   jQuery('.currency .active').trigger('click');
 }
