@@ -116,21 +116,7 @@
 </div>
 
 
-<script>
-    var cartCount = {{ cart.item_count }};
-        $(document)
-            .ready(function() {
-                {% if cart.item_count != 0 %}
-                $('.cart-count-bubble')
-                    .replaceWith('<a href="/cart" id="cart-number">View cart(' + cartCount + ')</a>');
-                {% endif %}
-                $('.modal--overlay')
-                    .on('click', function() {
-                        var overlay = $('.modal--overlay');
-                        closeModal(overlay);
-                    });
-            });
-    </script>
+
 
 
 <script>
@@ -140,7 +126,7 @@ Shopify.onItemAdded = function(line_item) {
 };
 
 Shopify.onCartUpdate = function(cart) {
-  Shopify.cartUpdateInfo(cart, '.cart-items');
+  Shopify.cartUpdateInfo(cart, '.cart-count-bubble');
 };
 
 Shopify.onError = function(XMLHttpRequest, textStatus) {
